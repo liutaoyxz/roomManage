@@ -32,5 +32,10 @@ public class CoreController {
         return json;
     }
 
+    @RequestMapping("toHotelPage")
+    public String toHotelPage(){
+        return "hotel";
+    }
+
 
 }

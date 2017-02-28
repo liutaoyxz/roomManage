@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <%--
   Created by IntelliJ IDEA.
   User: ltlxy
@@ -10,6 +11,15 @@
 <html>
 <head>
     <title>酒店管理</title>
+    <link href="/static/bootstrap/css/bootstrap.min.css" >
+    <script src="/static/jquery/jquery-3.1.1.min.js" ></script>
+
+    <script type="text/javascript">
+        $(function () {
+           alert('这里是jquery')
+        });
+    </script>
+
 </head>
 <body>
 
