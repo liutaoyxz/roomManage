@@ -20,7 +20,7 @@ public class CoreController {
     @RequestMapping("toIndex")
     public String toIndex(){
 
-        return "test";
+        return "index";
     }
 
     @RequestMapping("getJson")
