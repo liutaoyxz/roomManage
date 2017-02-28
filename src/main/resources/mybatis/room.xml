@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liutaoyxz.dao.RoomDao">
+
+    <insert id="insertRoom" parameterType="Room">
+        INSERT INTO tb_room(room_number,guest_name,guest_phone,
+                            in_time,expect_out_time,out_time,
+                            room_size,hotel_id,gender,state,have_card)
+        VALUES (#{roomNumber},#{guestName},#{guestPhone},
+                #{inTime},#{expectOutTime},#{outTime},
+                #{roomSize},#{hotelId},#{gender},#{state},#{haveCard}
+        )
+    </insert>
+
+
+    <select id="queryAll" resultType="Room">
+        SELECT * FROM tb_room
+    </select>
+
+
+
+</mapper>
