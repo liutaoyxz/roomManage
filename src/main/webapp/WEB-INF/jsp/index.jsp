@@ -3,8 +3,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/css/hotel.css">
+    <link rel="stylesheet" href="/static/css/index.css">
 
     <script src="/static/jquery/jquery-3.1.1.min.js"></script>
     <script src="/static/bootstrap/js/bootstrap.min.js"></script>
@@ -27,29 +29,29 @@
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
              aria-hidden="true" >
             <div class="modal-dialog">
-                <div class="modal-content" style="height: 700px;">
+                <div class="modal-content" >
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                             ×
                         </button>
-                        <h1 class="modal-title" id="myModalLabel" style="font-size: 70px">
+                        <h1 class="modal-title" id="myModalLabel" >
                             登录
                         </h1>
                     </div>
                     <div class="modal-body">
                         <div class="input-group">
-                            <label style="font-size: 60px">账号:&nbsp;&nbsp;&nbsp;</label>
+                            <label class="modal-lable">账号:&nbsp;&nbsp;&nbsp;</label>
                             <input class="inp" type="text" id="name"  />
                             <div class="clean"></div>
-                            <label style="font-size: 60px">密码:&nbsp;&nbsp;&nbsp;</label>
+                            <label class="modal-lable">密码:&nbsp;&nbsp;&nbsp;</label>
                             <input class="inp" type="password" id="password" />
                         </div>
                     </div>
                     <div class="modal-footer ">
-                        <button type="button" id="login" class="btn btn-primary mbtn" style="float: left">
+                        <button type="button" id="login" class="btn btn-primary mbtn" >
                             登录
                         </button>
-                        <button type="button" class="btn btn-default mbtn" id="close" data-dismiss="modal" style="float: left">关闭
+                        <button type="button" class="btn btn-default mbtn" id="close" data-dismiss="modal" >关闭
                         </button>
                     </div>
                 </div>

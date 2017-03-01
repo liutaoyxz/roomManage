@@ -37,5 +37,10 @@ public class CoreController {
         return "hotel";
     }
 
+    @RequestMapping("toManagePage")
+    public String toManagePage(){
+        return "manage";
+    }
+
 
 }

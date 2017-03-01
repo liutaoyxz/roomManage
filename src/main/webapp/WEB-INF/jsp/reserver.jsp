@@ -4,7 +4,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/css/hotel.css">
+    <link rel="stylesheet" href="/static/css/index.css">
 
     <script src="/static/jquery/jquery-3.1.1.min.js"></script>
     <title>预定酒店</title>
