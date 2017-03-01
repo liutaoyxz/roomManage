@@ -30,7 +30,7 @@ $('#tell').on('click',function () {
         success: function (data){
             var state = data.state;
             if (state == 1){
-                alert("通知成功!");
+                alert("通知已送达!");
                 window.location.reload();
             }else{
                 alert("通知失败,请微信联系")

@@ -3,6 +3,7 @@ package com.liutaoyxz.service;
 
 import com.liutaoyxz.entity.Hotel;
 import com.liutaoyxz.entity.Room;
+import com.liutaoyxz.entity.RoomVo;
 
 import java.util.List;
 
@@ -20,5 +21,11 @@ public interface CoreService {
     List<Hotel> queryAllHotel();
 
     int delHotel(int hotelId);
+
+    List<Room> getGuestByState(int state);
+
+    int ensertReserve(Room room);
+
+    List<RoomVo> getInGuest();
 
 }

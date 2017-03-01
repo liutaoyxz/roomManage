@@ -68,7 +68,6 @@
         var name = $('#name').val();
         var password = $('#password').val();
         if (name == 'zhangyue' && password == '0309'){
-            alert('登录成功');
             window.location.href="/toManagePage";
         }else {
             alert('账号或密码错误!');

@@ -91,4 +91,28 @@ public class CoreController {
     }
 
 
+    @GetMapping("getReserveGuest")
+    @ResponseBody
+    public Result getReserveGuest(){
+        return Result.success(this.coreService.getGuestByState(2));
+    }
+
+
+    @PostMapping("ensertReserve")
+    @ResponseBody
+    public Result ensertReserve(Room room){
+        int updateCount = this.coreService.ensertReserve(room);
+        if (updateCount > 0){
+            return Result.success(null);
+        }else {
+            return Result.error();
+        }
+    }
+
+    @RequestMapping("getInGuest")
+    @ResponseBody
+    public Result getInGuest(){
+        return Result.success(this.coreService.getInGuest());
+    }
+
 }

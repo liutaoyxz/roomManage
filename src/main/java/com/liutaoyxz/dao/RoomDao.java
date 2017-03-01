@@ -2,6 +2,7 @@ package com.liutaoyxz.dao;
 
 import com.liutaoyxz.entity.Hotel;
 import com.liutaoyxz.entity.Room;
+import com.liutaoyxz.entity.RoomVo;
 
 import java.util.List;
 
@@ -23,5 +24,13 @@ public interface RoomDao {
     List<Hotel> queryAllHotel();
 
     int delHotelById(Integer hotelId);
+
+    List<Room> getGuestByState(int state);
+
+    int ensertReserve(Room room);
+
+    List<RoomVo> getInGuest();
+
+    int delRoomByHotelId(Integer roomId);
 
 }

@@ -39,4 +39,28 @@
         WHERE hotel_id = #{hotelId}
     </delete>
 
+    <select id="getGuestByState" resultType="Room">
+        SELECT * FROM  tb_room
+        WHERE state = #{state}
+    </select>
+
+    <update id="ensertReserve" parameterType="Room">
+        UPDATE tb_room
+        SET state = 0,hotel_id = #{hotelId},have_card = #{haveCard},in_time = now(),room_number = #{roomNumber}
+        WHERE room_id = #{roomId}
+    </update>
+
+    <select id="getInGuest" resultType="RoomVo">
+        SELECT r.*,h.hotel_name
+        FROM tb_room r LEFT JOIN tb_hotel h ON r.hotel_id = h.hotel_id
+        WHERE state = 1
+        OR state = 0
+        ORDER BY state
+    </select>
+
+    <delete id="delRoomByHotelId" parameterType="int">
+        DELETE FROM tb_room WHERE hotel_id = #{hotelId}
+    </delete>
+
+
 </mapper>

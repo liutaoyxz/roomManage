@@ -41,94 +41,34 @@
                         <table class="table">
                             <thead>
                             <tr>
-                                <th>编号</th>
-                                <th>产品</th>
-                                <th>交付时间</th>
+                                <th>客人</th>
                                 <th>状态</th>
+                                <th>操作</th>
                             </tr>
                             </thead>
-                            <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>TB - Monthly</td>
-                                <td>
-                                    01/04/2012
-                                </td>
-                                <td>
-                                    Default
-                                </td>
-                            </tr>
-                            <tr class="success">
-                                <td>
-                                    1
-                                </td>
-                                <td>
-                                    TB - Monthly
-                                </td>
-                                <td>
-                                    01/04/2012
-                                </td>
-                                <td>
-                                    Approved
-                                </td>
-                            </tr>
-                            <tr class="error">
-                                <td>
-                                    2
-                                </td>
-                                <td>
-                                    TB - Monthly
-                                </td>
-                                <td>
-                                    02/04/2012
-                                </td>
-                                <td>
-                                    Declined
-                                </td>
-                            </tr>
-                            <tr class="warning">
-                                <td>
-                                    3
-                                </td>
-                                <td>
-                                    TB - Monthly
-                                </td>
-                                <td>
-                                    03/04/2012
-                                </td>
-                                <td>
-                                    Pending
-                                </td>
-                            </tr>
-                            <tr class="info">
-                                <td>
-                                    4
-                                </td>
-                                <td>
-                                    TB - Monthly
-                                </td>
-                                <td>
-                                    04/04/2012
-                                </td>
-                                <td>
-                                    Call in to confirm
-                                </td>
-                            </tr>
+                            <tbody id="in-guest-body">
+
                             </tbody>
                         </table>
                     </div>
 
-                    <!--  -->
+                    <!-- 房间 -->
                     <div class="tab-pane" id="panel-145670">
-                        <p>
-                            房间
-                        </p>
-                    </div>
 
+                    </div>
+                    <!-- 预约 -->
                     <div class="tab-pane" id="panel-145671">
-                        <p>
-                            预约
-                        </p>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>客人</th>
+                                <th>性别</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody id="reserve-table-body">
+                            </tbody>
+                        </table>
                     </div>
 
                     <div class="tab-pane" id="panel-145672">
@@ -150,7 +90,7 @@
             </div>
         </div>
     </div>
-
+    <!-- 添加酒店弹窗 -->
     <div class="modal fade" id="addHotel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
          aria-hidden="true" >
         <div class="modal-dialog">
@@ -185,8 +125,97 @@
             </div>
             <!-- /.modal-content -->
         </div>
-        <!-- /.modal -->
     </div>
+    <!-- /.modal -->
+
+    <!-- 客人详情弹窗 -->
+    <div class="modal fade" id="guest-info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true" >
+        <div class="modal-dialog">
+            <div class="modal-content" >
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        ×
+                    </button>
+                    <h1 class="modal-title" id="guest-title" >
+                        客人详情
+                    </h1>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group">
+                        <label class="modal-lable">客人:&nbsp;&nbsp;&nbsp;</label>
+                        <span id="guest-info-name"></span>
+                        <div class="clean"></div>
+                        <label class="modal-lable">房号:&nbsp;&nbsp;&nbsp;</label>
+                        <span id="guest-info-room-number"></span>
+                        <div class="clean"></div>
+                        <label class="modal-lable">持卡:&nbsp;&nbsp;&nbsp;</label>
+                        <span id="guest-info-have-card"></span>
+                        <div class="clean"></div>
+                        <label class="modal-lable">电话:&nbsp;&nbsp;&nbsp;</label>
+                        <span id="guest-info-phone"></span>
+                        <div class="clean"></div>
+                        <label class="modal-lable">酒店:&nbsp;&nbsp;&nbsp;</label>
+                        <span id="guest-info-hotel-name"></span>
+                    </div>
+                </div>
+                <div class="modal-footer ">
+
+                    <button type="button" class="btn btn-default mbtn" data-dismiss="modal" >确定
+                    </button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+    </div>
+    <!-- /.modal -->
+
+    <!-- 分配住房弹窗 -->
+    <div class="modal fade" id="reserve-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true" >
+        <div class="modal-dialog">
+            <div class="modal-content" >
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        ×
+                    </button>
+                    <h1 class="modal-title"  >
+                        分配房间
+                    </h1>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group">
+                        <label class="modal-lable">客人:&nbsp;&nbsp;&nbsp;</label>
+                        <input type="hidden" id="reserve-guest-roomId"/>
+                        <span id="reserve-guest-name"></span>
+                        <div class="clean"></div>
+                        <label class="modal-lable">房号:&nbsp;&nbsp;&nbsp;</label>
+                        <input  type="text" id="roomNumber" />
+                        <div class="clean"></div>
+                        <label class="modal-lable">酒店:&nbsp;&nbsp;&nbsp;</label>
+                        <select  id="hotel-sel">
+
+                        </select>
+                        <label class="modal-lable">持卡:&nbsp;&nbsp;&nbsp;</label>
+                        <select id="have-card">
+                            <option value="1">是</option>
+                            <option value="0">否</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer ">
+                    <button type="button" id="ensureReserve" class="btn btn-primary " onclick="ensertReserve()" >
+                        确定
+                    </button>
+                    <button type="button" class="btn btn-default " id="close-reserve" data-dismiss="modal" >关闭
+                    </button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+    </div>
+
+
 </div>
 <script src="/static/js/manage.js"></script>
 <script>
