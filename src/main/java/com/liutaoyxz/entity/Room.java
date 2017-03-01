@@ -17,13 +17,13 @@ public class Room {
 
     private String guestPhone;
 
-    private Date inTime;
+    private String inTime;
 
-    private Date expectOutTime;
+    private String expectOutTime;
 
-    private Date outTime;
+    private String outTime;
 
-    private Date createTime;
+    private String createTime;
 
     private Integer roomSize;
 
@@ -67,35 +67,35 @@ public class Room {
         this.guestPhone = guestPhone;
     }
 
-    public Date getInTime() {
+    public String getInTime() {
         return inTime;
     }
 
-    public void setInTime(Date inTime) {
+    public void setInTime(String inTime) {
         this.inTime = inTime;
     }
 
-    public Date getExpectOutTime() {
+    public String getExpectOutTime() {
         return expectOutTime;
     }
 
-    public void setExpectOutTime(Date expectOutTime) {
+    public void setExpectOutTime(String expectOutTime) {
         this.expectOutTime = expectOutTime;
     }
 
-    public Date getOutTime() {
+    public String getOutTime() {
         return outTime;
     }
 
-    public void setOutTime(Date outTime) {
+    public void setOutTime(String outTime) {
         this.outTime = outTime;
     }
 
-    public Date getCreateTime() {
+    public String getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Date createTime) {
+    public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
 
@@ -146,10 +146,10 @@ public class Room {
                 ", roomNumber='" + roomNumber + '\'' +
                 ", guestName='" + guestName + '\'' +
                 ", guestPhone='" + guestPhone + '\'' +
-                ", inTime=" + inTime +
-                ", expectOutTime=" + expectOutTime +
-                ", outTime=" + outTime +
-                ", createTime=" + createTime +
+                ", inTime='" + inTime + '\'' +
+                ", expectOutTime='" + expectOutTime + '\'' +
+                ", outTime='" + outTime + '\'' +
+                ", createTime='" + createTime + '\'' +
                 ", roomSize=" + roomSize +
                 ", hotelId=" + hotelId +
                 ", gender=" + gender +

@@ -10,7 +10,7 @@ import java.util.Date;
 public class Hotel {
 
 
-    private Integer roomId;
+    private Integer hotelId;
 
     private String phone;
 
@@ -20,12 +20,12 @@ public class Hotel {
 
     private Date createTime;
 
-    public Integer getRoomId() {
-        return roomId;
+    public Integer getHotelId() {
+        return hotelId;
     }
 
-    public void setRoomId(Integer roomId) {
-        this.roomId = roomId;
+    public void setHotelId(Integer hotelId) {
+        this.hotelId = hotelId;
     }
 
     public String getPhone() {
@@ -63,7 +63,7 @@ public class Hotel {
     @Override
     public String toString() {
         return "Room{" +
-                "roomId=" + roomId +
+                "roomId=" + hotelId +
                 ", phone='" + phone + '\'' +
                 ", address='" + address + '\'' +
                 ", hotelName='" + hotelName + '\'' +

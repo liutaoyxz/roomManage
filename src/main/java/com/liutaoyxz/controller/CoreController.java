@@ -1,9 +1,13 @@
 package com.liutaoyxz.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.liutaoyxz.dto.Result;
+import com.liutaoyxz.entity.Hotel;
+import com.liutaoyxz.entity.Room;
+import com.liutaoyxz.service.CoreService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,6 +20,11 @@ import java.util.Arrays;
  */
 @Controller
 public class CoreController {
+
+    @Autowired
+    private CoreService coreService;
+
+
 
     @RequestMapping("toIndex")
     public String toIndex(){
@@ -40,6 +49,45 @@ public class CoreController {
     @RequestMapping("toManagePage")
     public String toManagePage(){
         return "manage";
+    }
+
+    @RequestMapping(value = "reserveRoom")
+    @ResponseBody
+    public Result reserveRoom(Room room){
+        int reserveCount = coreService.reserveRoom(room);
+        if (reserveCount > 0){
+            return Result.success(null);
+        }else {
+            return Result.error();
+        }
+    }
+
+    @RequestMapping("addHotel")
+    @ResponseBody
+    public Result addHotel(Hotel hotel){
+        int insertCount = coreService.addHotel(hotel);
+        if (insertCount > 0){
+            return Result.success(null);
+        }else {
+            return Result.error();
+        }
+    }
+
+    @RequestMapping("queryAllHotel")
+    @ResponseBody
+    public Result queryAllHotel(){
+        return Result.success(coreService.queryAllHotel());
+    }
+
+    @GetMapping("delHotel/{hotelId}")
+    @ResponseBody
+    public  Result delHotel(@PathVariable(value = "hotelId") Integer hotelId){
+        int delCount = coreService.delHotel(hotelId);
+        if (delCount > 0){
+            return Result.success(null);
+        }else {
+            return Result.error();
+        }
     }
 
 

@@ -36,7 +36,7 @@ public class RoomDaoTest {
         room.setHotelId(1);
         room.setState(0);
         room.setRoomNumber("1105");
-        room.setInTime(new Date());
+        room.setInTime("2017-03-08 13:20:15");
         logger.info(room.toString());
         int insertCount = roomDao.insertRoom(room);
         System.out.println(insertCount);

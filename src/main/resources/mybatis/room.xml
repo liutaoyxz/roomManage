@@ -14,11 +14,29 @@
         )
     </insert>
 
+    <insert id="reserveRoom" parameterType="Room">
+        INSERT INTO tb_room( guest_name, guest_phone, in_time, expect_out_time,  gender, state)
+        VALUE (#{guestName},#{guestPhone},#{inTime},#{expectOutTime},#{gender},2)
+    </insert>
+
 
     <select id="queryAll" resultType="Room">
         SELECT * FROM tb_room
     </select>
 
+    <insert id="addHotel" parameterType="Hotel">
+        INSERT INTO tb_hotel(phone,address,hotel_name)
+        VALUE (#{phone},#{address},#{hotelName})
+    </insert>
 
+
+    <select id="queryAllHotel" resultType="Hotel">
+        SELECT * FROM tb_hotel;
+    </select>
+
+    <delete id="delHotelById" parameterType="int">
+        DELETE FROM tb_hotel
+        WHERE hotel_id = #{hotelId}
+    </delete>
 
 </mapper>

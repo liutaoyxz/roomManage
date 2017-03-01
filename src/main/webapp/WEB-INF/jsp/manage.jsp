@@ -8,13 +8,14 @@
 
     <!-- 固定头部 -->
     <meta charset="utf-8"/>
+    <%--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" >--%>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
     <script src="/static/jquery/jquery-3.1.1.min.js"></script>
     <script src="/static/bootstrap/js/bootstrap.min.js"></script>
     <!-- 固定头部 -->
 
-    <script src="/static/js/hotel.js"></script>
+
 </head>
 <body>
 <div class="container-fluid">
@@ -131,16 +132,66 @@
                     </div>
 
                     <div class="tab-pane" id="panel-145672">
-                        <p>
-                            酒店管理
-                        </p>
+                        <button class="btn btn-success"  data-toggle="modal" data-target="#addHotel">添加酒店</button>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>名称</th>
+                                <th>地址</th>
+                                <th>电话</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody id="table-body-hotel">
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="addHotel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true" >
+        <div class="modal-dialog">
+            <div class="modal-content" >
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        ×
+                    </button>
+                    <h1 class="modal-title" id="myModalLabel" >
+                        添加酒店
+                    </h1>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group">
+                        <label class="modal-lable">名称:&nbsp;&nbsp;&nbsp;</label>
+                        <input class="inp" type="text" id="hotelName"  />
+                        <div class="clean"></div>
+                        <label class="modal-lable">电话:&nbsp;&nbsp;&nbsp;</label>
+                        <input class="inp" type="text" id="phone" />
+                        <div class="clean"></div>
+                        <label class="modal-lable">地址:&nbsp;&nbsp;&nbsp;</label>
+                        <input class="inp" type="text" id="address" />
+                    </div>
+                </div>
+                <div class="modal-footer ">
+                    <button type="button" id="addHotelAction" class="btn btn-primary " >
+                        添加
+                    </button>
+                    <button type="button" class="btn btn-default mbtn" id="close" data-dismiss="modal" >关闭
+                    </button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal -->
+    </div>
 </div>
+<script src="/static/js/manage.js"></script>
+<script>
 
 
+</script>
 </body>
 </html>
