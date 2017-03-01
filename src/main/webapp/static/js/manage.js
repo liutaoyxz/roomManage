@@ -102,7 +102,7 @@ function guestInfo(guestName,hotelName,roomNumber,guestPhone,haveCard) {
     function ensertReserve() {
         var roomId = $('#reserve-guest-roomId').val();
         var hotelId = $('#hotel-sel').val();
-        var roomNumber = $('#roomNumber').val();
+        var roomNumber = $.trim($('#roomNumber').val());
         var haveCard = $('#have-card').val();
         if (roomNumber == '') {
             alert("请填写房间号");

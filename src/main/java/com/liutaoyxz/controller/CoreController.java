@@ -114,5 +114,11 @@ public class CoreController {
     public Result getInGuest(){
         return Result.success(this.coreService.getInGuest());
     }
+    @RequestMapping("getInGuest/{roomId}")
+    @ResponseBody
+    public Result delRoomById(){
+        return null;
+    }
+
 
 }

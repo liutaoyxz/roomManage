@@ -8,8 +8,8 @@ $('#expectOutTime').datetimepicker({
 
 
 $('#tell').on('click',function () {
-    var guestName = $('#name').val();
-    var guestPhone = $('#phone').val();
+    var guestName = $.trim($('#name').val());
+    var guestPhone = $.trim($('#phone').val());
     var inTime = $('#inTime').val()+":00";
     var expectOutTime = $('#expectOutTime').val()+":00";
     var gender = $('#gender').val();
