@@ -19,7 +19,7 @@ $('#tell').on('click',function () {
     }
 
     $.ajax({
-        url: "/reserveRoom?"+"guestName="+guestName+"&guestPhone="+guestPhone+"&inTime="+inTime+"&expectOutTime="+expectOutTime+"&gender="+gender,
+        url: "/roomManager/reserveRoom?"+"guestName="+guestName+"&guestPhone="+guestPhone+"&inTime="+inTime+"&expectOutTime="+expectOutTime+"&gender="+gender,
         type: 'post',
         cache : false,
         // sync : false,

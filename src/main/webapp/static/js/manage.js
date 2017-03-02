@@ -2,7 +2,7 @@
 
 function initInGuest() {
     $.ajax({
-        url: "/getInGuest",
+        url: "/roomManager/getInGuest",
         type: 'get',
         cache: false,
         // sync : false,
@@ -48,7 +48,7 @@ function checkOut(roomId) {
 
     if (confirm("请确认客人信息已经核实!")) {
         $.ajax({
-            url: "/checkOut/" + roomId,
+            url: "/roomManager/checkOut/" + roomId,
             type: 'get',
             cache: false,
             // sync : false,
@@ -91,7 +91,7 @@ function guestInfo(guestName, hotelName, roomNumber, guestPhone, haveCard) {
 function initGroupRoom() {
 
     $.ajax({
-        url: "/queryGroupRoom",
+        url: "/roomManager/queryGroupRoom",
         type: 'get',
         cache: false,
         // sync : false,
@@ -130,7 +130,7 @@ initGroupRoom();
 function checkOutGroup(roomNumber,hotelId) {
     if(confirm("您确定要退掉这间房间吗?")){
         $.ajax({
-            url: "/checkOutGroup/" + roomNumber+"/"+hotelId,
+            url: "/roomManager/checkOutGroup/" + roomNumber+"/"+hotelId,
             type: 'get',
             cache: false,
             // sync : false,
@@ -160,7 +160,7 @@ function checkOutGroup(roomNumber,hotelId) {
 //初始化预约列表
 function initReserveGuest() {
     $.ajax({
-        url: "/getReserveGuest",
+        url: "/roomManager/getReserveGuest",
         type: 'get',
         cache: false,
         // sync : false,
@@ -198,7 +198,7 @@ function delReserve(roomId, guestName) {
 
     if (confirm("你确定要删除[ " + guestName + " ]这条预定记录吗?")) {
         $.ajax({
-            url: "/delRoom/" + roomId,
+            url: "/roomManager/delRoom/" + roomId,
             type: 'get',
             cache: false,
             // sync : false,
@@ -242,7 +242,7 @@ function ensertReserve() {
         return;
     }
     $.ajax({
-        url: "/ensertReserve?" + "hotelId=" + hotelId + "&roomId=" + roomId + "&roomNumber=" + roomNumber + "&haveCard=" + haveCard,
+        url: "/roomManager/ensertReserve?" + "hotelId=" + hotelId + "&roomId=" + roomId + "&roomNumber=" + roomNumber + "&haveCard=" + haveCard,
         type: 'post',
         cache: false,
         // sync : false,
@@ -275,7 +275,7 @@ $('#addHotelAction').on('click', function () {
         return;
     }
     $.ajax({
-        url: "/addHotel?" + "hotelName=" + hotelName + "&phone=" + phone + "&address=" + address,
+        url: "/roomManager/addHotel?" + "hotelName=" + hotelName + "&phone=" + phone + "&address=" + address,
         type: 'post',
         cache: false,
         // sync : false,
@@ -302,7 +302,7 @@ function initHotel() {
     var body = $('#table-body-hotel');
     body.find('tr').remove();
     $.ajax({
-        url: "/queryAllHotel",
+        url: "/roomManager/queryAllHotel",
         type: 'post',
         cache: false,
         // sync : false,
@@ -332,7 +332,7 @@ function removeHotel(hotelId, hotelName) {
 
     if (confirm("你确定要删除[ " + hotelName + " ]这个酒店吗?[ " + hotelName + " ]的所有入住信息将会删除")) {
         $.ajax({
-            url: "/delHotel/" + hotelId,
+            url: "/roomManager/delHotel/" + hotelId,
             type: 'get',
             cache: false,
             // sync : false,

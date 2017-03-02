@@ -13,14 +13,14 @@
     <!-- 固定头部 -->
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
-    <script src="/static/jquery/jquery-3.1.1.min.js"></script>
-    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="<c:url value="/static/bootstrap/css/bootstrap.min.css"/>">
+    <script src="<c:url value="/static/jquery/jquery-3.1.1.min.js"/>"></script>
+    <script src="<c:url value="/static/bootstrap/js/bootstrap.min.js"/>"></script>
     <!-- 固定头部 -->
 
-    <link rel="stylesheet" href="/static/css/bootstrap-datetimepicker.min.css">
-    <script src="/static/js/bootstrap-datetimepicker.min.js"></script>
-    <script src="/static/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="<c:url value="/static/css/bootstrap-datetimepicker.min.css"/>">
+    <script src="<c:url value="/static/js/bootstrap-datetimepicker.min.js"/>"></script>
+    <script src="<c:url value="/static/js/locales/bootstrap-datetimepicker.zh-CN.js"/>" charset="utf-8"></script>
     <title>预定</title>
 </head>
 <body>
@@ -60,7 +60,7 @@
         <button type="button" id="tell" class="btn btn-default">告诉他</button>
     </form>
 
-    <script src="/static/js/hotel.js"></script>
+    <script src="<c:url value="/static/js/hotel.js"/>"></script>
 </div>
 </body>
 </html>

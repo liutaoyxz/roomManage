@@ -3,14 +3,15 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <meta charset="utf-8" />
+    <!-- 固定头部 -->
+    <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/css/index.css">
+    <link rel="stylesheet" href="<c:url value="/static/bootstrap/css/bootstrap.min.css"/>">
+    <link rel="stylesheet" href="<c:url value="/static/css/index.css"/>">
+    <script src="<c:url value="/static/jquery/jquery-3.1.1.min.js"/>"></script>
+    <script src="<c:url value="/static/bootstrap/js/bootstrap.min.js"/>"></script>
+    <!-- 固定头部 -->
 
-    <script src="/static/jquery/jquery-3.1.1.min.js"></script>
-    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/static/js/index.js"></script>
     <title>欢迎!!!</title>
 </head>
 <body>
@@ -19,7 +20,7 @@
 
         <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
             <div class="alert alert-success" role="alert">您可以提前在这里<font color="red">告诉</font>主办方您的留宿信息,方便主办方提前为您预定房间</div>
-            <button class="ht_btn colo1" type="submit" onclick="window.location='/toHotelPage'">告诉他</button>
+            <button class="ht_btn colo1" type="submit" onclick="window.location='<c:url value="/toHotelPage"/>'">告诉他</button>
             <button id="ddz" class="ht_btn colo2" type="submit" data-toggle="modal" data-target="#myModal">我是东道主
             </button>
         </div>
@@ -68,7 +69,7 @@
         var name = $('#name').val();
         var password = $('#password').val();
         if (name == 'zhangyue' && password == '0309'){
-            window.location.href="/toManagePage";
+            window.location.href="<c:url value='/toManagePage'/>";
         }else {
             alert('账号或密码错误!');
         }

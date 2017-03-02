@@ -9,7 +9,7 @@
  }
 
 body{
-    background-image: url("/static/img/bg3.jpg");
+    background-image: url("/roomManager/static/img/bg3.jpg");
     /*background-repeat:repeat-x ;*/
     background-size: cover;
 }

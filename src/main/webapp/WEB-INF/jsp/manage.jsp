@@ -8,11 +8,10 @@
 
     <!-- 固定头部 -->
     <meta charset="utf-8"/>
-    <%--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" >--%>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
-    <script src="/static/jquery/jquery-3.1.1.min.js"></script>
-    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="<c:url value="/static/bootstrap/css/bootstrap.min.css"/>">
+    <script src="<c:url value="/static/jquery/jquery-3.1.1.min.js"/>"></script>
+    <script src="<c:url value="/static/bootstrap/js/bootstrap.min.js"/>"></script>
     <!-- 固定头部 -->
 
 
@@ -228,7 +227,7 @@
 
 
 </div>
-<script src="/static/js/manage.js"></script>
+<script src="<c:url value="/static/js/manage.js"/>"></script>
 <script>
 
 
