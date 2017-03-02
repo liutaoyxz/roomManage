@@ -39,18 +39,31 @@ public class CoreServiceImpl implements CoreService{
         return roomDao.delHotelById(hotelId);
     }
 
-    @Override
     public List<Room> getGuestByState(int state) {
         return roomDao.getGuestByState(state);
     }
 
-    @Override
     public int ensertReserve(Room room) {
         return roomDao.ensertReserve(room);
     }
 
-    @Override
     public List<RoomVo> getInGuest() {
         return roomDao.getInGuest();
+    }
+
+    public int delRoomById(int roomId) {
+        return roomDao.delRoomById(roomId);
+    }
+
+    public int checkOut(int roomId) {
+        return roomDao.checkOutById(roomId);
+    }
+
+    public List<RoomVo> queryGroupRoom() {
+        return roomDao.queryGroupRoom();
+    }
+
+    public int checkOutGroup(String roomNumber, int hotelId) {
+        return roomDao.checkOutGroup(roomNumber, hotelId);
     }
 }

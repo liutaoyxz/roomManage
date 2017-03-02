@@ -54,7 +54,18 @@
 
                     <!-- 房间 -->
                     <div class="tab-pane" id="panel-145670">
-
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>酒店</th>
+                                <th>房号</th>
+                                <th>客人</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody id="room-table-body">
+                            </tbody>
+                        </table>
                     </div>
                     <!-- 预约 -->
                     <div class="tab-pane" id="panel-145671">

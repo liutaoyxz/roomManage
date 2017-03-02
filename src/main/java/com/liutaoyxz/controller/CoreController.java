@@ -114,10 +114,48 @@ public class CoreController {
     public Result getInGuest(){
         return Result.success(this.coreService.getInGuest());
     }
-    @RequestMapping("getInGuest/{roomId}")
+
+
+    @RequestMapping("delRoom/{roomId}")
     @ResponseBody
-    public Result delRoomById(){
-        return null;
+    public Result delRoomById(@PathVariable(value = "roomId") int roomId){
+         coreService.delRoomById(roomId);
+        return Result.success(null);
+    }
+
+
+
+    @RequestMapping("checkOut/{roomId}")
+    @ResponseBody
+    public Result checkOut(@PathVariable(value = "roomId") int roomId){
+        int checkOutCount = coreService.checkOut(roomId);
+        if (checkOutCount > 0){
+            return Result.success(null);
+        }else {
+            return Result.error();
+        }
+    }
+
+
+    @GetMapping("queryGroupRoom")
+    @ResponseBody
+    public Result queryGroupRoom(){
+        return Result.success(this.coreService.queryGroupRoom());
+    }
+
+
+
+
+    @RequestMapping("checkOutGroup/{roomNumber}/{hotelId}")
+    @ResponseBody
+    public Result checkOutGroup(@PathVariable(value = "roomNumber") String roomNumber,
+                                @PathVariable(value = "hotelId") int hotelId){
+        int checkOutCount = coreService.checkOutGroup(roomNumber,hotelId);
+        if (checkOutCount > 0){
+            return Result.success(null);
+        }else {
+            return Result.error();
+        }
     }
 
 

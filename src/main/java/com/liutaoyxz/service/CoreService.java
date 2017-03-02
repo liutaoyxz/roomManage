@@ -28,4 +28,14 @@ public interface CoreService {
 
     List<RoomVo> getInGuest();
 
+    List<RoomVo> queryGroupRoom();
+
+    int delRoomById(int roomId);
+
+    int checkOut(int roomId);
+
+    int checkOutGroup(String roomNumber,int hotelId);
+
+
+
 }

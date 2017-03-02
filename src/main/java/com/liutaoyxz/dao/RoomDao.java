@@ -3,6 +3,7 @@ package com.liutaoyxz.dao;
 import com.liutaoyxz.entity.Hotel;
 import com.liutaoyxz.entity.Room;
 import com.liutaoyxz.entity.RoomVo;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -31,6 +32,14 @@ public interface RoomDao {
 
     List<RoomVo> getInGuest();
 
+    List<RoomVo> queryGroupRoom();
+
     int delRoomByHotelId(Integer roomId);
+
+    int delRoomById(int roomId);
+
+    int checkOutById(int roomId);
+
+    int checkOutGroup(@Param("roomNumber") String roomNumber,@Param("hotelId") int hotelId);
 
 }
