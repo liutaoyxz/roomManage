@@ -34,7 +34,7 @@ function initInGuest() {
                     body.append(tr);
                 }
             } else {
-                alert("获取预约客人失败,请联系刘涛")
+                alert("获取客人失败,请联系刘涛")
             }
 
         }
@@ -59,6 +59,7 @@ function checkOut(roomId) {
                 var state = data.state;
                 if (state == 1) {
                     initInGuest();
+                    initGroupRoom();
                 } else {
                     alert("退房失败,请联系刘涛")
                 }
@@ -254,6 +255,7 @@ function ensertReserve() {
             if (state == 1) {
                 initInGuest();
                 initReserveGuest();
+                initGroupRoom();
                 $('#close-reserve').click();
             } else {
                 alert("分配失败,请联系刘涛")
